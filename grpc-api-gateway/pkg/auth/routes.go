@@ -12,7 +12,7 @@ func RegisterRoutes(gEngine *gin.Engine, conf *config.Config) *ServiceClient {
 	}
 
 	routes := gEngine.Group("/auth")
-	routes.POST("/register")
+	routes.POST("/register", serClient.Register)
 	routes.POST("/login", serClient.Login)
 
 	return serClient
